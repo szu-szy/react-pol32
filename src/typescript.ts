@@ -76,3 +76,16 @@ getAnotherItem({ id: "id 312321", text: "textdsadas", isVibile: true });
 const getData = (): string => {
   return "tekst";
 };
+
+// zadanie
+type BigHero = {
+  name: string;
+  strength: number;
+};
+
+const getBigHero = (): BigHero => {
+  return {
+    name: "big hero name",
+    strength: 10,
+  };
+};
