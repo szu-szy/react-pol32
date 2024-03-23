@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* zagnieżdżenia scss */}
+      <div className="block">
+        <input type="text" id="block-input-name" />
+        <input type="text" id="block-input-age" />
+        <h1 className="block-element">header</h1>
+        <ul className="block-list">
+          <li className="block-list-item">1</li>
+          <li className="block-list-item">2</li>
+          <li className="block-list-item">3</li>
+        </ul>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
