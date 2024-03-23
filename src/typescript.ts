@@ -1,6 +1,6 @@
 // zadania typescript
 
-// ---- union = "|"
+// ---- union = "|" - "albo albo" / "lub" / "OR"
 // zapis preferowany przez Sz
 type PersonNumberType = string | number;
 
@@ -48,3 +48,31 @@ type PersonWithoutName = Omit<Person, "firstName" | "lastName">;
 //   lastName: string;
 //   age: number;
 // }
+
+// ---- typowanie parametrow funkcji
+type GetItemProps = {
+  id: string;
+  text: string;
+  isVibile: boolean;
+};
+
+// typowanie parametrow jako typy proste
+const getItem = (id: string, text: string, isVisible: boolean) => {};
+getItem("10", "text", true);
+
+// destrukturyzujemy parametry obiektu o typie GetItemProps
+// typowanie parametrow jako obiekt typu GetItemProps
+const getAnotherItem = ({ id, text, isVibile }: GetItemProps) => {
+  // const { id, text, isVibile } = params;
+  console.log(id, text, isVibile);
+};
+getAnotherItem({ id: "id 312321", text: "textdsadas", isVibile: true });
+
+// ---- typowanie wartosci zwracanej z funkcji (): typ => {}
+// nasza funkcja nic nie zwraca > void
+// const getData = (): void => {}
+
+// getData zwraca nam z funkcji dane typu string
+const getData = (): string => {
+  return "tekst";
+};
