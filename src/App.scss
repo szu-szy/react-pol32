@@ -83,3 +83,24 @@
 //     }
 //   }
 // }
+
+// Zadanie 4
+.header {
+  background-color: gray;
+
+  &__nav {
+    padding: 4px;
+  }
+  &__list {
+    display: flex;
+    list-style: none;
+
+    &-item {
+      color: red;
+
+      &--active {
+        font-size: 50px;
+      }
+    }
+  }
+}
