@@ -89,3 +89,5 @@ const getBigHero = (): BigHero => {
     strength: 10,
   };
 };
+
+export {};
