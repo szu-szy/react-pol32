@@ -1,8 +1,12 @@
 import "./App.scss";
-import Header from "./components/Header/Header";
+import Block from "./components/Block/Block";
 
 const App = () => {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Block />
+    </div>
+  );
 };
 
 export default App;
