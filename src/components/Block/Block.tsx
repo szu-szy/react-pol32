@@ -3,19 +3,18 @@ import "./Block.scss";
 // pamietamy o dziedziczeniu z Component (biblioteka React)
 import { Component } from "react";
 
-let count = 0;
-count = count + 1;
-
 type StateType = {
   count: number;
   text: string;
 };
 
+// musimy zdefiniowac jakie propsy przyjmuje nasz komponent
 type Props = {
-  count: number;
+  welcomeText: string;
 };
 
 // okreslenie typu dla Stanu komponent
+// okreslenie typu propsów dla komponentu
 // Component<TypPropsów, TypStanu>
 class Block extends Component<Props, StateType> {
   // sposób I deklaracja stanu
@@ -76,6 +75,7 @@ class Block extends Component<Props, StateType> {
       <div>
         <h1>count: {this.state.count}</h1>
         <h2>nasz tekst: {this.state.text}</h2>
+        <h3>Powitanie: {this.props.welcomeText}</h3>
         {/* Event w JS: click, submit, change */}
         {/* Event w React: onClick, onSubmit, onChange - poniewaz JS zarezerwowalo poprzednie nazwy */}
         {/* button.addEventListener('click', this.increment) */}
