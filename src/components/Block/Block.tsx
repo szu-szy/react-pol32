@@ -6,11 +6,34 @@ import { Component } from "react";
 let count = 0;
 count = count + 1;
 
-class Block extends Component {
+type StateType = {
+  count: number;
+  text: string;
+};
+
+type Props = {
+  count: number;
+};
+
+// okreslenie typu dla Stanu komponent
+// Component<TypPropsów, TypStanu>
+class Block extends Component<Props, StateType> {
   // sposób I deklaracja stanu
-  state = {
-    count: 4,
-  };
+  // state = {
+  //   count: 4,
+  //   text: "jakis tekst",
+  // };
+
+  constructor(props: Props) {
+    super(props);
+
+    // II sposób deklaracji stanu
+    // moja rekomendacja
+    this.state = {
+      count: 5,
+      text: "",
+    };
+  }
 
   // metoda zwiekszajaca stan count o 1 (function posiada własny this)
   // increment() {
@@ -20,7 +43,28 @@ class Block extends Component {
   // opcja II za pomoca funkcji strzalkowej
   // (nie posiada wlasnego this - wskazuje na rodzica)
   increment = () => {
-    console.log(this.state);
+    // sluzy do poinformowania VDOM aby odswiezyl nasz komponent
+    // setState - ma dostęp do stanu poprzedniego setState(prev => ({...prev}))
+    // do setState przekazujemy tylko te wlasciwosci ktore chcemy zaktualizowac
+    // jeżeli nie podalismy, jakiejs właściwości stanu, to nie zmieni ona wartosci - ale też nie zniknie
+    // czyli: jeżeli to setState podamy obiekt z count
+    // -> to zaktualizuje nam w state tylko count, textu nie ruszy
+    this.setState((prev) => {
+      return {
+        // nadpisanie starym stanem obiektu "...prev" - działa domyslnie i nie musimy tego pisasc
+        // wiec "...prev" nie jest tutaj wymagany
+        ...prev,
+        count: prev.count + 1,
+      };
+    });
+
+    setTimeout(() => {
+      console.log(this.state);
+    }, 1000);
+
+    // ten sposób nie odświezy nam komponentu
+    // VDOM nie wie, ze cos sie zmienilo
+    // this.state.count = this.state.count + 1;
   };
   // pamietamy, że musi zawierać metode render
   render() {
@@ -31,6 +75,7 @@ class Block extends Component {
     return (
       <div>
         <h1>count: {this.state.count}</h1>
+        <h2>nasz tekst: {this.state.text}</h2>
         {/* Event w JS: click, submit, change */}
         {/* Event w React: onClick, onSubmit, onChange - poniewaz JS zarezerwowalo poprzednie nazwy */}
         {/* button.addEventListener('click', this.increment) */}
