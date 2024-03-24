@@ -11,6 +11,7 @@ type StateType = {
 // musimy zdefiniowac jakie propsy przyjmuje nasz komponent
 type Props = {
   welcomeText: string;
+  updateText: (newText: string) => void;
 };
 
 // okreslenie typu dla Stanu komponent
@@ -76,6 +77,11 @@ class Block extends Component<Props, StateType> {
         <h1>count: {this.state.count}</h1>
         <h2>nasz tekst: {this.state.text}</h2>
         <h3>Powitanie: {this.props.welcomeText}</h3>
+        <button
+          onClick={() => this.props.updateText("nowa wartosc z blocku do app")}
+        >
+          Aktualizuj tekst aplikacji
+        </button>
         {/* Event w JS: click, submit, change */}
         {/* Event w React: onClick, onSubmit, onChange - poniewaz JS zarezerwowalo poprzednie nazwy */}
         {/* button.addEventListener('click', this.increment) */}
