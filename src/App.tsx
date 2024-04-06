@@ -7,6 +7,7 @@ import { Counter } from "./06.04.2024/Counter";
 import { Timer } from "./06.04.2024/Timer";
 import { Headline } from "./06.04.2024/Headline";
 import { FunctionCounter } from "./06.04.2024/FunctionCounter";
+import { Paragraph } from "./06.04.2024/Paragraph";
 
 const getItem = (text: string) => {};
 
@@ -57,6 +58,7 @@ class App extends Component<{}, AppState> {
         {/* {this.state.isCounterVisible && <Counter />} */}
         {/* <Timer />
         <Headline /> */}
+        <Paragraph />
         <FunctionCounter />
       </div>
     );
