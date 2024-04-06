@@ -59,6 +59,7 @@ export class Counter extends Component<{}, CounterState> {
   componentWillUnmount(): void {
     console.log("odmontowanie");
     clearInterval(this.timerID);
+    this.timerID = undefined;
     // dobre miejsce do:
     // zatrzymania timera
     // zatrzymania pobierania danych

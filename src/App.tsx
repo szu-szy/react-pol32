@@ -4,6 +4,7 @@ import "./App.scss";
 import Block from "./components/Block/Block";
 import Parent from "./components/Parent/Parent";
 import { Counter } from "./06.04.2024/Counter";
+import { Timer } from "./06.04.2024/Timer";
 
 const getItem = (text: string) => {};
 
@@ -51,7 +52,8 @@ class App extends Component<{}, AppState> {
         <button onClick={this.toggleCounter}>
           {this.state.isCounterVisible ? "Ukryj" : "Pokaż"} Counter komponent
         </button>
-        {this.state.isCounterVisible && <Counter />}
+        {/* {this.state.isCounterVisible && <Counter />} */}
+        <Timer />
       </div>
     );
   }
