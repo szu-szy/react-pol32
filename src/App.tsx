@@ -9,15 +9,27 @@ const getItem = (text: string) => {};
 
 getItem("text");
 
-class App extends Component {
+type AppState = {
+  appWelcomeText: string;
+  isCounterVisible: boolean;
+};
+
+class App extends Component<{}, AppState> {
   state = {
     appWelcomeText: "app welcome text to block",
+    isCounterVisible: true,
   };
 
   updateWelcomeText = (newText: string) => {
     this.setState({
       appWelcomeText: newText,
     });
+  };
+
+  toggleCounter = () => {
+    this.setState((prev) => ({
+      isCounterVisible: !prev.isCounterVisible,
+    }));
   };
 
   // updateWelcomeText('nowy tekst welcome')
@@ -36,7 +48,10 @@ class App extends Component {
         {/* II sposób, przekazanie propsów wszystkich na raz przez spread operator */}
         {/* <Block {...blockProps} /> */}
         {/* ZADANIA Z DNIA 06.04.24 */}
-        <Counter />
+        <button onClick={this.toggleCounter}>
+          {this.state.isCounterVisible ? "Ukryj" : "Pokaż"} Counter komponent
+        </button>
+        {this.state.isCounterVisible && <Counter />}
       </div>
     );
   }
