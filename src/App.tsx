@@ -3,6 +3,7 @@ import "./App.scss";
 
 import Block from "./components/Block/Block";
 import Parent from "./components/Parent/Parent";
+import { Counter } from "./06.04.2024/Counter";
 
 const getItem = (text: string) => {};
 
@@ -24,7 +25,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Parent />
+        {/* <Parent /> */}
         {/* App.append(Block) */}
         {/* Komponent Block wymaga propsów określonych w Block.tsx > Props l:12 */}
         {/* I sposób przekazania propsów - pojedynczo przez nazwe właściwowści */}
@@ -34,6 +35,8 @@ class App extends Component {
         /> */}
         {/* II sposób, przekazanie propsów wszystkich na raz przez spread operator */}
         {/* <Block {...blockProps} /> */}
+        {/* ZADANIA Z DNIA 06.04.24 */}
+        <Counter />
       </div>
     );
   }
