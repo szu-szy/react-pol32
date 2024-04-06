@@ -5,6 +5,7 @@ import Block from "./components/Block/Block";
 import Parent from "./components/Parent/Parent";
 import { Counter } from "./06.04.2024/Counter";
 import { Timer } from "./06.04.2024/Timer";
+import { Headline } from "./06.04.2024/Headline";
 
 const getItem = (text: string) => {};
 
@@ -54,6 +55,7 @@ class App extends Component<{}, AppState> {
         </button>
         {/* {this.state.isCounterVisible && <Counter />} */}
         <Timer />
+        <Headline />
       </div>
     );
   }
