@@ -39,6 +39,9 @@ export class Counter extends Component<{}, CounterState> {
     // odpalenie interval/timeout
     this.timerID = setInterval(() => {
       console.log("timout co 1 sekunda");
+      this.setState((prev) => ({
+        count: prev.count + 1,
+      }));
     }, 1000);
   }
   // 2 etap cyklu zycia - odpala się za każda aktualizacją komponentu (w tym stanu)
@@ -52,6 +55,7 @@ export class Counter extends Component<{}, CounterState> {
     }
   }
   // 3 etap cyklu zycia - odpala się tylko raz! bezposrednio przed odmontowaniem
+  // zapobiega wyciekowi pamięci przegladarki
   componentWillUnmount(): void {
     console.log("odmontowanie");
     clearInterval(this.timerID);
