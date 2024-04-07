@@ -72,9 +72,9 @@ class App extends Component<{}, AppState> {
         <Headline /> */}
         {/* <Paragraph /> */}
         {/* <FunctionCounter /> */}
-        <FunctionTimer initSeconds={0} />
+        {/* <FunctionTimer initSeconds={0} /> */}
 
-        <h2>Login Form</h2>
+        {/* <h2>Login Form</h2>
         <button onClick={this.toggleLoginForm}>
           {this.state.isLoginFormVisible
             ? "Ukryj formularz"
@@ -82,9 +82,9 @@ class App extends Component<{}, AppState> {
         </button>
         {this.state.isLoginFormVisible && (
           <LoginForm initLogin="typical login" initPass="<PASSWORD>" />
-        )}
+        )} */}
         <Fruits />
-        <ElementList initTab={["element 1", "element 2", "element 3"]} />
+        {/* <ElementList initTab={["element 1", "element 2", "element 3"]} /> */}
       </div>
     );
   }
