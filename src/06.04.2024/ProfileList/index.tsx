@@ -67,6 +67,23 @@ export const ProfileList = () => {
     }
   };
 
+  const deleteProduct = async (id: string) => {
+    try {
+      // usuwamy element z bazy
+      const res = await fetch(`https://dummyjson.com/users/${id}`, {
+        method: "DELETE",
+      });
+      if (!res.ok) {
+        throw new Error("Something went wrong!");
+      }
+      // filtrujemy liste w celu usunięcia wskazanego elementu przez id w parametrach funkcji
+      setUsers((prev) => prev.filter((user) => user.id !== id));
+      alert("pomyslnie usunieto uzytkownika");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleValue = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFormState((prev) => ({
@@ -104,7 +121,12 @@ export const ProfileList = () => {
       {users.length > 0 && (
         <ul>
           {users.map((user, index) => (
-            <li key={index}>{user.firstName}</li>
+            <li key={index}>
+              {user.firstName}
+              <button onClick={() => deleteProduct(user.id)}>
+                Usuń gościa
+              </button>
+            </li>
           ))}
         </ul>
       )}
