@@ -10,6 +10,8 @@ import { FunctionCounter } from "./06.04.2024/FunctionCounter";
 import { Paragraph } from "./06.04.2024/Paragraph";
 import { FunctionTimer } from "./06.04.2024/FunctionTimer";
 import { LoginForm } from "./06.04.2024/LoginForm";
+import { ElementList } from "./06.04.2024/ElementList";
+import { Fruits } from "./06.04.2024/Fruits";
 
 const getItem = (text: string) => {};
 
@@ -81,6 +83,8 @@ class App extends Component<{}, AppState> {
         {this.state.isLoginFormVisible && (
           <LoginForm initLogin="typical login" initPass="<PASSWORD>" />
         )}
+        <Fruits />
+        <ElementList initTab={["element 1", "element 2", "element 3"]} />
       </div>
     );
   }
