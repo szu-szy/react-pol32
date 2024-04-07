@@ -13,6 +13,7 @@ import { LoginForm } from "./06.04.2024/LoginForm";
 import { ElementList } from "./06.04.2024/ElementList";
 import { Fruits } from "./06.04.2024/Fruits";
 import { ProfileForm } from "./06.04.2024/ProfileForm";
+import { ProfileList } from "./06.04.2024/ProfileList";
 
 const getItem = (text: string) => {};
 
@@ -85,8 +86,9 @@ class App extends Component<{}, AppState> {
           <LoginForm initLogin="typical login" initPass="<PASSWORD>" />
         )} */}
         {/* <Fruits /> */}
-        <ProfileForm />
+        {/* <ProfileForm /> */}
         {/* <ElementList initTab={["element 1", "element 2", "element 3"]} /> */}
+        <ProfileList />
       </div>
     );
   }
