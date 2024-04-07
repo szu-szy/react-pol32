@@ -8,6 +8,7 @@ import { Timer } from "./06.04.2024/Timer";
 import { Headline } from "./06.04.2024/Headline";
 import { FunctionCounter } from "./06.04.2024/FunctionCounter";
 import { Paragraph } from "./06.04.2024/Paragraph";
+import { FunctionTimer } from "./06.04.2024/FunctionTimer";
 
 const getItem = (text: string) => {};
 
@@ -60,6 +61,7 @@ class App extends Component<{}, AppState> {
         <Headline /> */}
         {/* <Paragraph /> */}
         {/* <FunctionCounter /> */}
+        <FunctionTimer initSeconds={0} />
       </div>
     );
   }
