@@ -58,8 +58,8 @@ class App extends Component<{}, AppState> {
         {/* {this.state.isCounterVisible && <Counter />} */}
         {/* <Timer />
         <Headline /> */}
-        <Paragraph />
-        <FunctionCounter />
+        {/* <Paragraph /> */}
+        {/* <FunctionCounter /> */}
       </div>
     );
   }
