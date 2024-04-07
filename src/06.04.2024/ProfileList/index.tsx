@@ -10,6 +10,14 @@ type User = {
 };
 
 // Omit - na bazie typu User kopiuje nam dane z pominięciem wlasciwosci "id"
+// to samo co:
+// type UserForm = {
+//   firstName: string;
+//   lastName: string;
+//   age: number;
+//   email: string;
+//   phone: string;
+// };
 type UserForm = Omit<User, "id">;
 
 export const ProfileList = () => {
