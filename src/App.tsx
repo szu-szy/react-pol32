@@ -18,6 +18,7 @@ import { Header } from "./20.04.2024/Header/Header";
 import { InputForm } from "./20.04.2024/InputForm/InputForm";
 import { Post, PostList } from "./revision/PostList/PostList";
 import { PostForm } from "./revision/PostForm/PostForm";
+import { ColorSection } from "./hooks/ColorSection/ColorSection";
 
 const getItem = (text: string) => {};
 
@@ -54,6 +55,8 @@ const App = () => {
 
   return (
     <div className="App">
+      {/* Zadania hooki */}
+      <ColorSection />
       {/* Potwórzenie - zadania */}
       <PostList list={postList} />
       <PostForm addPost={addPost} />

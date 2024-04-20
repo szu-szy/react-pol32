@@ -14,8 +14,6 @@
 
 3. Zaimplementuj funkcję przycisku, który po kliknięciu zmieni kolor tła strony na losowy, wykorzystując hook useState do przechowywania aktualnego koloru.
 
-
-
 <!-- useEffect -->
 1. Utwórz komponent, który pobiera i wyświetla listę postów z zewnętrznego API przy użyciu hooka useEffect do pobrania danych po załadowaniu komponentu.
 
