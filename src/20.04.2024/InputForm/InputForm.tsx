@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 export const InputForm = () => {
   const [inputState, setInputState] = useState("");
@@ -9,6 +9,28 @@ export const InputForm = () => {
     const { value } = event.target;
     setInputState(value);
   };
+
+  // wykona się tylko raz na poczatku przy zamontowaniu komponentu
+  useEffect(() => {
+    console.log("utworzono input form");
+
+    // odmontowanie komponentu
+    return () => {
+      console.log("Komponentu odmontowany");
+    };
+  }, []);
+
+  // wykona się za każdym razem - niezależnie jaki stan się zmieni
+  useEffect(() => {
+    console.log(
+      "coś się zmieniło w stanie komponentu - nie wiemy co, nie wazne"
+    );
+    // brak tablicy zależności powoduje odswiezanie za kazdym razem kiedy jest wykonany rerender
+  });
+
+  useEffect(() => {
+    console.log("wartosc input state się zmieniła");
+  }, [inputState]);
 
   return (
     <>

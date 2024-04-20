@@ -1,4 +1,4 @@
-# Podsumowanie
+# Podsumowanie - https://dummyjson.com/docs/posts
 1. Utwórz komponent, który będzie wyświetlał listę postów z zewnętrznego API - lista ma być przekazana jako props do komponentu listy postów w pliku App.tsx.
 2. Utwórz formularz który będzie dodawał kolejny element do listy (oraz wysylal zapytanie do API)
 3. jeżeli lista jest pusta to ma wyświetlać się odpowiedni komunikat
