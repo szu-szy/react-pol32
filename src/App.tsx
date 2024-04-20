@@ -14,6 +14,8 @@ import { ElementList } from "./06.04.2024/ElementList";
 import { Fruits } from "./06.04.2024/Fruits";
 import { ProfileForm } from "./06.04.2024/ProfileForm";
 import { ProfileList } from "./06.04.2024/ProfileList";
+import { Header } from "./20.04.2024/Header/Header";
+import { InputForm } from "./20.04.2024/InputForm/InputForm";
 
 const getItem = (text: string) => {};
 
@@ -55,6 +57,24 @@ class App extends Component<{}, AppState> {
   render() {
     return (
       <div className="App">
+        <h2>Input Form komponent</h2>
+        <InputForm />
+        {/* <h1>Jakiś tekst</h1>
+        <Header textHeader="duży header">Jakiś tekst</Header> */}
+        {/* Wrzucenie do box elementów JSX dzieki propsowi Children - zapis Header.tsx > linia 6 */}
+        {/* <Box>
+          <span>123</span>
+        </Box>
+        <Box>
+          <h1>123</h1>
+        </Box>
+        <Box>
+          <div>
+            <div>
+
+            </div>
+          </div>
+        </Box> */}
         {/* <Parent /> */}
         {/* App.append(Block) */}
         {/* Komponent Block wymaga propsów określonych w Block.tsx > Props l:12 */}
@@ -88,7 +108,7 @@ class App extends Component<{}, AppState> {
         {/* <Fruits /> */}
         {/* <ProfileForm /> */}
         {/* <ElementList initTab={["element 1", "element 2", "element 3"]} /> */}
-        <ProfileList />
+        {/* <ProfileList /> */}
       </div>
     );
   }
