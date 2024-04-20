@@ -4,7 +4,6 @@ import "./App.scss";
 import Block from "./components/Block/Block";
 import Parent from "./components/Parent/Parent";
 import { Counter } from "./06.04.2024/Counter";
-import { Timer } from "./06.04.2024/Timer";
 import { Headline } from "./06.04.2024/Headline";
 import { FunctionCounter } from "./06.04.2024/FunctionCounter";
 import { Paragraph } from "./06.04.2024/Paragraph";
@@ -16,9 +15,12 @@ import { ProfileForm } from "./06.04.2024/ProfileForm";
 import { ProfileList } from "./06.04.2024/ProfileList";
 import { Header } from "./20.04.2024/Header/Header";
 import { InputForm } from "./20.04.2024/InputForm/InputForm";
-import { Post, PostList } from "./revision/PostList/PostList";
+import { Post } from "./revision/PostList/PostList";
 import { PostForm } from "./revision/PostForm/PostForm";
-import { ColorSection } from "./hooks/ColorSection/ColorSection";
+import { ColorSection } from "./hooks/useState/ColorSection/ColorSection";
+import { PostList } from "./hooks/useEffect/PostList/PostList";
+import { Timer } from "./hooks/useEffect/Timer/Timer";
+import { Modal } from "./hooks/useEffect/Modal/Modal";
 
 const getItem = (text: string) => {};
 
@@ -56,9 +58,11 @@ const App = () => {
   return (
     <div className="App">
       {/* Zadania hooki */}
+      <Modal />
+      {/* <Timer /> */}
       <ColorSection />
+      <PostList />
       {/* Potwórzenie - zadania */}
-      <PostList list={postList} />
       <PostForm addPost={addPost} />
       {/* -- koniec powtórzenia */}
       {/* <h2>Input Form komponent</h2>
