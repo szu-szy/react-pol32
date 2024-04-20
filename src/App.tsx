@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component, useEffect, useState } from "react";
 import "./App.scss";
 
 import Block from "./components/Block/Block";
@@ -16,6 +16,8 @@ import { ProfileForm } from "./06.04.2024/ProfileForm";
 import { ProfileList } from "./06.04.2024/ProfileList";
 import { Header } from "./20.04.2024/Header/Header";
 import { InputForm } from "./20.04.2024/InputForm/InputForm";
+import { Post, PostList } from "./revision/PostList/PostList";
+import { PostForm } from "./revision/PostForm/PostForm";
 
 const getItem = (text: string) => {};
 
@@ -27,42 +29,41 @@ type AppState = {
   isLoginFormVisible: boolean;
 };
 
-class App extends Component<{}, AppState> {
-  state = {
-    appWelcomeText: "app welcome text to block",
-    isCounterVisible: true,
-    isLoginFormVisible: false,
-  };
-
-  updateWelcomeText = (newText: string) => {
-    this.setState({
-      appWelcomeText: newText,
-    });
-  };
-
-  toggleCounter = () => {
-    this.setState((prev) => ({
-      isCounterVisible: !prev.isCounterVisible,
-    }));
-  };
-
-  toggleLoginForm = () => {
-    this.setState((prev) => ({
-      isLoginFormVisible: !prev.isLoginFormVisible,
-    }));
-  };
-
+const App = () => {
   // updateWelcomeText('nowy tekst welcome')
+  const [postList, setPostList] = useState<Post[]>([]);
 
-  render() {
-    return (
-      <div className="App">
-        <h2>Input Form komponent</h2>
-        <InputForm />
-        {/* <h1>Jakiś tekst</h1>
+  const fetchPost = async () => {
+    try {
+      const res = await fetch("https://dummyjson.com/posts");
+
+      if (!res.ok) throw new Error("Cannot fetch post data");
+
+      const { posts } = await res.json();
+      setPostList(posts);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const addPost = (post: Post) => setPostList((prev) => [...prev, post]);
+
+  useEffect(() => {
+    fetchPost();
+  }, []);
+
+  return (
+    <div className="App">
+      {/* Potwórzenie - zadania */}
+      <PostList list={postList} />
+      <PostForm addPost={addPost} />
+      {/* -- koniec powtórzenia */}
+      {/* <h2>Input Form komponent</h2>
+        <InputForm /> */}
+      {/* <h1>Jakiś tekst</h1>
         <Header textHeader="duży header">Jakiś tekst</Header> */}
-        {/* Wrzucenie do box elementów JSX dzieki propsowi Children - zapis Header.tsx > linia 6 */}
-        {/* <Box>
+      {/* Wrzucenie do box elementów JSX dzieki propsowi Children - zapis Header.tsx > linia 6 */}
+      {/* <Box>
           <span>123</span>
         </Box>
         <Box>
@@ -75,28 +76,28 @@ class App extends Component<{}, AppState> {
             </div>
           </div>
         </Box> */}
-        {/* <Parent /> */}
-        {/* App.append(Block) */}
-        {/* Komponent Block wymaga propsów określonych w Block.tsx > Props l:12 */}
-        {/* I sposób przekazania propsów - pojedynczo przez nazwe właściwowści */}
-        {/* <Block
+      {/* <Parent /> */}
+      {/* App.append(Block) */}
+      {/* Komponent Block wymaga propsów określonych w Block.tsx > Props l:12 */}
+      {/* I sposób przekazania propsów - pojedynczo przez nazwe właściwowści */}
+      {/* <Block
           welcomeText={this.state.appWelcomeText}
           updateText={this.updateWelcomeText}
         /> */}
-        {/* II sposób, przekazanie propsów wszystkich na raz przez spread operator */}
-        {/* <Block {...blockProps} /> */}
-        {/* ZADANIA Z DNIA 06.04.24 */}
-        {/* <button onClick={this.toggleCounter}>
+      {/* II sposób, przekazanie propsów wszystkich na raz przez spread operator */}
+      {/* <Block {...blockProps} /> */}
+      {/* ZADANIA Z DNIA 06.04.24 */}
+      {/* <button onClick={this.toggleCounter}>
           {this.state.isCounterVisible ? "Ukryj" : "Pokaż"} Counter komponent
         </button> */}
-        {/* {this.state.isCounterVisible && <Counter />} */}
-        {/* <Timer />
+      {/* {this.state.isCounterVisible && <Counter />} */}
+      {/* <Timer />
         <Headline /> */}
-        {/* <Paragraph /> */}
-        {/* <FunctionCounter /> */}
-        {/* <FunctionTimer initSeconds={0} /> */}
+      {/* <Paragraph /> */}
+      {/* <FunctionCounter /> */}
+      {/* <FunctionTimer initSeconds={0} /> */}
 
-        {/* <h2>Login Form</h2>
+      {/* <h2>Login Form</h2>
         <button onClick={this.toggleLoginForm}>
           {this.state.isLoginFormVisible
             ? "Ukryj formularz"
@@ -105,13 +106,12 @@ class App extends Component<{}, AppState> {
         {this.state.isLoginFormVisible && (
           <LoginForm initLogin="typical login" initPass="<PASSWORD>" />
         )} */}
-        {/* <Fruits /> */}
-        {/* <ProfileForm /> */}
-        {/* <ElementList initTab={["element 1", "element 2", "element 3"]} /> */}
-        {/* <ProfileList /> */}
-      </div>
-    );
-  }
-}
+      {/* <Fruits /> */}
+      {/* <ProfileForm /> */}
+      {/* <ElementList initTab={["element 1", "element 2", "element 3"]} /> */}
+      {/* <ProfileList /> */}
+    </div>
+  );
+};
 
 export default App;

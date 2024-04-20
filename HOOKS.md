@@ -2,7 +2,7 @@
 1. Utwórz komponent, który będzie wyświetlał listę postów z zewnętrznego API - lista ma być przekazana jako props do komponentu listy postów w pliku App.tsx.
 2. Utwórz formularz który będzie dodawał kolejny element do listy (oraz wysylal zapytanie do API)
 3. jeżeli lista jest pusta to ma wyświetlać się odpowiedni komunikat
-4. Utwórz komponent dla pojedyńczego posta, gdzie wszystkie informacje maja być przekazane przez posty
+4. Utwórz komponent dla pojedyńczego posta, gdzie wszystkie informacje maja być przekazane przez propsy
 5. pamietaj aby wszystko było otypowane zgodnie z API
 
 # Zadania z React Hooks - 20.04
