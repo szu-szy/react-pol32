@@ -1,9 +1,10 @@
-import { Component, useEffect, useState } from "react";
+import { ChangeEvent, Component, useEffect, useState } from "react";
 import "./App.scss";
 
 import { Post } from "./revision/PostList/PostList";
 import { ElementList } from "./hooks/useCallback/ElementList/ElementList";
 import { Form } from "./hooks/useCallback/Form/Form";
+import { SearchForm } from "./hooks/customHooks/SearchForm/SearchForm";
 
 const getItem = (text: string) => {};
 
@@ -41,6 +42,7 @@ const App = () => {
   return (
     <div className="App">
       {/* Zadania hooki */}
+      <SearchForm />
       <Form />
       <ElementList />
       {/* <Parent /> */}
