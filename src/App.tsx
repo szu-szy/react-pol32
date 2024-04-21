@@ -21,7 +21,8 @@ import { ColorSection } from "./hooks/useState/ColorSection/ColorSection";
 import { PostList } from "./hooks/useEffect/PostList/PostList";
 import { Timer } from "./hooks/useEffect/Timer/Timer";
 import { Modal } from "./hooks/useEffect/Modal/Modal";
-import { InputRef } from "./hooks/useRef/InputRef";
+import { InputRef } from "./hooks/useRef/InputRef/InputRef";
+import { TimerRef } from "./hooks/useRef/TimerRef/TimerRef";
 
 const getItem = (text: string) => {};
 
@@ -60,6 +61,7 @@ const App = () => {
     <div className="App">
       {/* Zadania hooki */}
       <InputRef />
+      <TimerRef />
       {/* <Modal /> */}
       {/* <Timer /> */}
       {/* <ColorSection /> */}
