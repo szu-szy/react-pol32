@@ -21,6 +21,7 @@ import { ColorSection } from "./hooks/useState/ColorSection/ColorSection";
 import { PostList } from "./hooks/useEffect/PostList/PostList";
 import { Timer } from "./hooks/useEffect/Timer/Timer";
 import { Modal } from "./hooks/useEffect/Modal/Modal";
+import { InputRef } from "./hooks/useRef/InputRef";
 
 const getItem = (text: string) => {};
 
@@ -58,12 +59,13 @@ const App = () => {
   return (
     <div className="App">
       {/* Zadania hooki */}
-      <Modal />
+      <InputRef />
+      {/* <Modal /> */}
       {/* <Timer /> */}
-      <ColorSection />
-      <PostList />
+      {/* <ColorSection /> */}
+      {/* <PostList /> */}
       {/* Potwórzenie - zadania */}
-      <PostForm addPost={addPost} />
+      {/* <PostForm addPost={addPost} /> */}
       {/* -- koniec powtórzenia */}
       {/* <h2>Input Form komponent</h2>
         <InputForm /> */}
