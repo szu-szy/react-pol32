@@ -23,6 +23,8 @@ import { Timer } from "./hooks/useEffect/Timer/Timer";
 import { Modal } from "./hooks/useEffect/Modal/Modal";
 import { InputRef } from "./hooks/useRef/InputRef/InputRef";
 import { TimerRef } from "./hooks/useRef/TimerRef/TimerRef";
+import MathOperation from "./hooks/useMemo/MathOperation/MathOperation";
+import { FilteredList } from "./hooks/useMemo/FilteredList/FilteredList";
 
 const getItem = (text: string) => {};
 
@@ -60,8 +62,10 @@ const App = () => {
   return (
     <div className="App">
       {/* Zadania hooki */}
-      <InputRef />
-      <TimerRef />
+      <FilteredList />
+      {/* <MathOperation /> */}
+      {/* <InputRef /> */}
+      {/* <TimerRef /> */}
       {/* <Modal /> */}
       {/* <Timer /> */}
       {/* <ColorSection /> */}
