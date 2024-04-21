@@ -2,19 +2,10 @@
 // Zastosuj hook useCallback do zdefiniowania funkcji obsługującej wysłanie formularza,
 // aby uniknąć ponownego tworzenia funkcji podczas ponownego renderowania komponentu.
 
-import { FormEvent, useCallback, useEffect, useState } from "react";
+import { useForm } from "./useForm";
 
 export const Form = () => {
-  const [text, setText] = useState("");
-
-  const handleSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("submit form");
-  }, []);
-
-  useEffect(() => {
-    console.log("utworzenie nowej referencji funkcji handleSubmit");
-  }, [handleSubmit]);
+  const { text, setText, handleSubmit } = useForm();
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
