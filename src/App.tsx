@@ -1,30 +1,9 @@
 import { Component, useEffect, useState } from "react";
 import "./App.scss";
 
-import Block from "./components/Block/Block";
-import Parent from "./components/Parent/Parent";
-import { Counter } from "./06.04.2024/Counter";
-import { Headline } from "./06.04.2024/Headline";
-import { FunctionCounter } from "./06.04.2024/FunctionCounter";
-import { Paragraph } from "./06.04.2024/Paragraph";
-import { FunctionTimer } from "./06.04.2024/FunctionTimer";
-import { LoginForm } from "./06.04.2024/LoginForm";
-import { ElementList } from "./06.04.2024/ElementList";
-import { Fruits } from "./06.04.2024/Fruits";
-import { ProfileForm } from "./06.04.2024/ProfileForm";
-import { ProfileList } from "./06.04.2024/ProfileList";
-import { Header } from "./20.04.2024/Header/Header";
-import { InputForm } from "./20.04.2024/InputForm/InputForm";
 import { Post } from "./revision/PostList/PostList";
-import { PostForm } from "./revision/PostForm/PostForm";
-import { ColorSection } from "./hooks/useState/ColorSection/ColorSection";
-import { PostList } from "./hooks/useEffect/PostList/PostList";
-import { Timer } from "./hooks/useEffect/Timer/Timer";
-import { Modal } from "./hooks/useEffect/Modal/Modal";
-import { InputRef } from "./hooks/useRef/InputRef/InputRef";
-import { TimerRef } from "./hooks/useRef/TimerRef/TimerRef";
-import MathOperation from "./hooks/useMemo/MathOperation/MathOperation";
-import { FilteredList } from "./hooks/useMemo/FilteredList/FilteredList";
+import { ElementList } from "./hooks/useCallback/ElementList/ElementList";
+import { Form } from "./hooks/useCallback/Form/Form";
 
 const getItem = (text: string) => {};
 
@@ -62,7 +41,10 @@ const App = () => {
   return (
     <div className="App">
       {/* Zadania hooki */}
-      <FilteredList />
+      <Form />
+      <ElementList />
+      {/* <Parent /> */}
+      {/* <FilteredList /> */}
       {/* <MathOperation /> */}
       {/* <InputRef /> */}
       {/* <TimerRef /> */}
